@@ -1,30 +1,21 @@
 #!/bin/sh
 
-#or
-#fileA=$1
-#fileB=$2
-#
-#i=1
-#while IFS= read -r line;
-#do
-##Reading each line.
-#  echo "Line No. $i : $line"
-#  i=$((i+1))
-#done < $fileA
-
+#get files
 file1=$1
 file2=$2
-file3=$3
 
 COUNT=0
+#read first file
 while read line
 do
   flag=0
+  #read 2nd file
   while read line2
   do
     COUNT=$(( $COUNT + 1 ))
     echo $line
     echo $line2
+    #compare lines to see if they are dfferent
     if [ "_$line" = "_$line2" ]
       then
         flag=1
@@ -32,6 +23,7 @@ do
   done < file2
   if [ $flag -eq 1 ]
   then
+    #print lines
     echo "$line : $COUNT"
   fi
 done < file1
