@@ -115,3 +115,8 @@ chmod +wrx 4.sh
 4.
 4.sh
 ./4.sh 
+./4.sh text1.txt text2.txt output.txt 
+./4.sh 
+./4.sh text1.txt text2.txt 
+ls -al
+./4.sh text1.txt text2.txt 
